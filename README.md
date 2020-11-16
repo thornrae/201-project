@@ -13,3 +13,7 @@ Langauges Used: HTML, CSS, JavaScript
 Programs Used: GitHub, VSCode
 
 Questions used in our game were pulled from: https://hobbylark.com/party-games/list-of-family-feud-questions
+
+## WIREFRAME
+![alt text](/images/201wireframe.png)
+
