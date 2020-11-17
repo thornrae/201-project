@@ -12,8 +12,17 @@ Langauges Used: HTML, CSS, JavaScript
 
 Programs Used: GitHub, VSCode
 
+*USER STORIES* 
+As an administrative user I want the ability to change the timer.
+- As a marketing person
+- As a developer
+- As a game lover
+- As a student
+
 Questions used in our game were pulled from: https://hobbylark.com/party-games/list-of-family-feud-questions
 
 ## WIREFRAME
 ![alt text](/images/201wireframe.png)
 
+## DOMAIN MODEL
+![alt text](/images/survey-says-domain-model-v1.png)
