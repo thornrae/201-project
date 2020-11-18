@@ -31,7 +31,7 @@ As a *marketing user*, I would like to have a full scale application developed t
 #### Acceptance Tasks: 
 - Follow design principals
 
-As a *developer* I want to make sure the code is well documented and clear so the site can be easily maintained and updated by admin or user
+As a *developer* I want to make sure the code is well documented, accessible, and clear so the site can be easily maintained and updated by admin or user
 #### Feature Tasks:
 - update Domain Map with comments for critical items
 - detailed ReadMe

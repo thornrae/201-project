@@ -8,7 +8,7 @@ The vision of this web application is to create a game environment that mimicks 
 - If correct survey answer is submitted, this web app will display the answer to the player
 - This web app will store and display score results
 - This web app will tell you more about its developers
-- This app will not allow for communication or between two computers
+- This app will not allow for communication between two computers
 
 ### MVP
 - Store player points and render to results page
@@ -18,10 +18,13 @@ The vision of this web application is to create a game environment that mimicks 
 - Game session ends when one of two things occur: the timer runs out, or, the user submits three wrong survey answers
 
 ### STRETCH GOALS
-- Adding the functionality of being able to create a "team" and play with more than one user (on the same computer - handoff)
+- Adding the functionality of being able to create a "team" and play with more than one user (on the same computer - handoff style)
 - Creating easy, medium and hard levels
 
 ### Functional Requirements
 1. Users can create and play under their own player name
 1. Users can submit survey answers to survey question
 1. Users can see previous score results
+
+### Workflow 
+These tasks will be accomplished through mob programming.
