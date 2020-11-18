@@ -51,7 +51,7 @@ As a *game lover* I want to be able keep track of my top score.
 - Display results on page
 
 #### Acceptance Tasks: 
-- Make sure results page are a
+- Make sure results page are rendered
 
 As a *student* I want to be able to learn something from the game.
 #### Feature Tasks:
