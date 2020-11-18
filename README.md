@@ -31,7 +31,7 @@ As a *marketing user*, I would like to have a full scale application developed t
 #### Acceptance Tasks: 
 - Follow design principals
 
-As a *developer* I want to make sure the code is well documented and clear so the site can be easily maintained and updated by admin or user
+As a *developer* I want to make sure the code is well documented, accessible, and clear so the site can be easily maintained and updated by admin or user
 #### Feature Tasks:
 - update Domain Map with comments for critical items
 - detailed ReadMe
@@ -51,7 +51,7 @@ As a *game lover* I want to be able keep track of my top score.
 - Display results on page
 
 #### Acceptance Tasks: 
-- Make sure results page are a
+- Make sure results page are rendered
 
 As a *student* I want to be able to learn something from the game.
 #### Feature Tasks:
