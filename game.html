@@ -12,30 +12,77 @@
 <body>
   <header id="header">
     <h2>Survey Says</h2>
+    <!-- id to be changed to class since used more than once? or update id names to be unique  -->
     <ul id="ulOne">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="results.html">Results</a></li>
     </ul>
   </header>
+
   <h1>Game Page</h1>
-  <section id="timer">Timer</section>
-  <section id="incorrect-answer"></section>
-  <section id="scoreboard">Scoreboard</section>
+
+  
+  
+  <section id="timer-box">
+    <h4 id="timer">Timer</h4>
+  </section>
+
+  <section id="play-now">
+    <button id="play-now-button">Play Now</button>
+  </section>
+
+
+  <section id="incorrect-answer-box">
+    <h4 id="wrong-answer">Wrong Answer</h4>
+  </section>
+
+  <section id="scoreboard-box">
+    <h4 id="scoreboard">Scoreboard</h4>
+  </section>
+
   <section id="survey-question">
-    <p>this is where the question will be</p>
+    <h4 id="question-box">Survey Question</h4>
   </section>
-  <section id="survey-answer">
-    <table>this is where the answers will be displayed</table>
+
+  <section id="survey-answers">
+    <div class="answer-box">
+      <h4 id="answer-one">Survey Answer 1</h4>
+    </div>
+
+    <div class="answer-box">
+      <h4 id="answer-two">Survey Answer 2</h4>
+    </div>
+
+    <div class="answer-box">
+      <h4 id="answer-three">Survey Answer 3</h4>
+    </div>
+
+    <div class="answer-box">
+      <h4 id="answer-four">Survey Answer 4</h4>
+    </div>
+
+    <div class="answer-box">
+      <h4 id="answer-five">Survey Answer 5</h4>
+    </div>
+
+    <div class="answer-box">
+      <h4 id="answer-six">Survey Answer 6</h4>
+    </div>
+
   </section>
-  <section id="survey-submission">
+
+  <section id="answer-submit">
     <form id="answerform">
       <label for="answerform">Enter your answer here: </label>
         <input type="text" name="answerForm">
         <button id="submitanswer">Submit Your Answer</button>
       </form>
   </section>
+
+  <script src="game.js"></script>
 </body>
+
 <footer id="footer">
   <h1>Survey Says</h1>
   <ul id="ulOne">
