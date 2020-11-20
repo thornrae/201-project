@@ -1,0 +1,126 @@
+body {
+  width: 900px;
+  margin: auto;
+}
+
+
+header {
+  margin-bottom: 25px;
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+}
+
+
+header li {
+  float: left;
+  margin-right: 25px;
+}
+
+footer li {
+  float: left;
+  margin-right: 25px;
+}
+
+
+#game-info {
+margin-bottom: 25px;
+display: flex;
+justify-content: space-between;
+
+}
+
+#timer-box {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  border: 1px solid black;
+
+}
+
+#incorrect-answer-box {
+  width: 150px;
+  display: inline-block;
+  border: 1px solid black;
+
+}
+
+#scoreboard-box{
+  width: 150px;
+  display: inline-block;
+  border: 1px solid black;
+
+}
+/* 
+section {
+  border: 1px solid black;
+} */
+
+#play-now {
+width: 228px;
+margin: auto;
+}
+
+#play-now-button {
+  font-size: 50px;
+}
+
+#survey-question {
+  width: 500px;
+  height: 75px;
+  margin: auto;
+  text-align: center;
+  margin-top: 25px;
+  border: 1px solid black;
+
+}
+
+.answer-box {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#survey-answers {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#answer-one {
+  border: 1px solid black;
+}
+
+#answer-two {
+  border: 1px solid black;
+}
+
+#answer-three {
+  border: 1px solid black;
+}
+
+#answer-four {
+  border: 1px solid black;
+}
+
+#answer-five {
+  border: 1px solid black;
+}
+
+#answer-six {
+  border: 1px solid black;
+}
+
+#answer-submit {
+  width: 500px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+
+
+
+
