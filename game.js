@@ -9,16 +9,23 @@ var scoreBoardBox = document.getElementById('scoreboard-box');
 var scoreboard = document.getElementById('scoreboard');
 var surveyQuestionEl = document.getElementById('question-box');
 var surveyAnswerOne = document.getElementById('answer-one');
+// var topAnswer = document.getElementById('top-answer');
 var surveyAnswerTwo = document.getElementById('answer-two');
+// var secondAnswer = document.getElementById('answer-two');
 var surveyAnswerThree = document.getElementById('answer-three');
+// var thirdAnswer = document.getElementById('answer-four');
 var surveyAnswerFour = document.getElementById('answer-four');
+// var fourthAnswer = document.getElementById('answer-four');
 var surveyAnswerFive = document.getElementById('answer-five');
+// var fifthAnswer = document.getElementById('answer-five');
 var surveyAnswerSix = document.getElementById('answer-six');
+// var sixthAnswer = document.get
 var surveyBoxes = document.getElementsByClassName('answer-box');
 var answerContainer = document.getElementById('answer-submit');
 var answerForm = document.getElementById('answerform');
 var playNowBox = document.getElementById('play-now');
 var playNowButton = document.getElementById('play-now-button');
+var answerContainer = document.getElementById('survey-answers');
 
 // display welcome message to user showing playername
 
@@ -53,7 +60,12 @@ new SurveyQuestionSet ('Name a type of bear', 'grizzly', 'polar', 'panda', 'tedd
 
 
 //add event listener on the play now button
-//create event handler function
+//create event handler function: change the display of
+//playNow event listener
+// playNowButton.addEventListener('click', playNow);
+answerForm.addEventListener('submit', checkAnswer);
+
+
 
 //add event listener on the submit answer button
 //create event handler function
@@ -78,10 +90,87 @@ function displayRandomSurveyQuestion () {
   var renderedQuestion = document.createElement('h4');
   renderedQuestion.textContent = surveyQuestionAndAnswerArray[currentSurveyQuestionIndex].surveyQuestion;
   surveyQuestionEl.appendChild(renderedQuestion);
-
 }
 
+//  timer(seconds){
+//   var timeLeft = 120;
+// }
+
+// function playNow(event) {
+//   //invoke timer function?
+// }
+
+//render the point function will be outside of this checkAnswer function
+var playerScore = 0;
+var wrongAnswerTracker = 0;
+
+function showWrongAnswer(){
+  var incorrect = document.createElement('h4');
+  incorrect.textContent = 'wrong';
+  wrongAnswer.appendChild(incorrect);
+}
+
+function checkAnswer(event){
+  event.preventDefault();
+  var playerAnswer = event.target.answerForm.value;
+  for(var i=0; i < surveyQuestionAndAnswerArray.length; i++){
+    if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer1){
+      var topAnswerData = document.createElement('h4');
+      topAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer1;
+      surveyAnswerOne.appendChild(topAnswerData);
+
+      playerScore += 6;
+      console.log(playerScore);
+
+    } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer2){
+      var secondAnswerData = document.createElement('h4');
+      secondAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer2;
+      surveyAnswerTwo.appendChild(secondAnswerData);
+
+      playerScore += 5;
+
+
+    } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer3){
+      var thirdAnswerData = document.createElement('h4');
+      thirdAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer3;
+      surveyAnswerThree.appendChild(thirdAnswerData);
+
+      playerScore += 4;
+    } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer4){
+      var fourthAnswerData = document.createElement('h4');
+      fourthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer4;
+      surveyAnswerFour.appendChild(fourthAnswerData);
+
+      playerScore +=3;
+    }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer5){
+      var fifthAnswerData = document.createElement('h4');
+      fifthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer5;
+      surveyAnswerFive.appendChild(fifthAnswerData);
+
+      playerScore +=2;
+
+    }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer6){
+      var sixthAnswerData = document.createElement('h4');
+      sixthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer6;
+      surveyAnswerSix.appendChild(sixthAnswerData);
+
+      playerScore +=1;
+    } else {
+      wrongAnswerTracker++; //if wrong answer === 3, end game
+      console.log(wrongAnswerTracker);
+    }
+  }
+  if(wrongAnswerTracker > 0){
+    showWrongAnswer();
+  }
+}
+
+
+//render wrong red x function that is called in the else if answer doesnt equal logic
 displayRandomSurveyQuestion();
+
+
+
 
 
 
