@@ -105,19 +105,26 @@ var playerScore = 0;
 var wrongAnswerTracker = 0;
 
 function showWrongAnswer(){
-  var incorrect = document.createElement('h4');
-  incorrect.textContent = 'wrong';
-  wrongAnswer.appendChild(incorrect);
+  if(wrongAnswerTracker > 0){
+    var incorrect = document.createElement('h4');
+    incorrect.textContent = 'wrong';
+    wrongAnswer.appendChild(incorrect);
+  }
 }
 
+var answerInput = document.getElementById('answerinput');
 function checkAnswer(event){
   event.preventDefault();
+  answerInput.value = '';
   var playerAnswer = event.target.answerForm.value;
+  var answeredCorrectly = false;
   for(var i=0; i < surveyQuestionAndAnswerArray.length; i++){
     if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer1){
       var topAnswerData = document.createElement('h4');
       topAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer1;
       surveyAnswerOne.appendChild(topAnswerData);
+
+      answeredCorrectly = true;
 
       playerScore += 6;
       console.log(playerScore);
@@ -127,6 +134,8 @@ function checkAnswer(event){
       secondAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer2;
       surveyAnswerTwo.appendChild(secondAnswerData);
 
+      answeredCorrectly = true;
+
       playerScore += 5;
 
 
@@ -135,11 +144,15 @@ function checkAnswer(event){
       thirdAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer3;
       surveyAnswerThree.appendChild(thirdAnswerData);
 
+      answeredCorrectly = true;
+
       playerScore += 4;
     } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer4){
       var fourthAnswerData = document.createElement('h4');
       fourthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer4;
       surveyAnswerFour.appendChild(fourthAnswerData);
+
+      answeredCorrectly = true;
 
       playerScore +=3;
     }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer5){
@@ -147,6 +160,7 @@ function checkAnswer(event){
       fifthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer5;
       surveyAnswerFive.appendChild(fifthAnswerData);
 
+      answeredCorrectly = true;
       playerScore +=2;
 
     }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer6){
@@ -154,14 +168,18 @@ function checkAnswer(event){
       sixthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer6;
       surveyAnswerSix.appendChild(sixthAnswerData);
 
+      answeredCorrectly = true;
+
       playerScore +=1;
-    } else {
-      wrongAnswerTracker++; //if wrong answer === 3, end game
-      console.log(wrongAnswerTracker);
     }
   }
-  if(wrongAnswerTracker > 0){
+  if (answeredCorrectly === false) {
+    wrongAnswerTracker++; //if wrong answer === 3, end game
+    console.log(wrongAnswerTracker);
     showWrongAnswer();
+  }
+  if (wrongAnswerTracker === 3){
+    console.log('game over');
   }
 }
 
