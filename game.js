@@ -181,7 +181,7 @@ function checkAnswer(event){
 
 //connect local storage
 
-//display results on results.html page
+
 
 
 
