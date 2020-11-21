@@ -45,7 +45,7 @@ function SurveyQuestionSet (surveyQuestion, surveyAnswer1, surveyAnswer2, survey
 new SurveyQuestionSet ('Tell us something that many people do just once a week', 'church', 'grocery shop', 'laundry', 'clean house', 'sleep in', 'eat out');
 new SurveyQuestionSet ('Name something you might eat with a hamburger', 'french fries', 'soup', 'salad', 'onion rings', 'tater tots', 'pickles');
 new SurveyQuestionSet ('How long is an "unbearable" commute?', '1 hour', '30 minutes', '45 minutes', '2 hours', '1.5 hours');
-new SurveyQuestionSet ('Name something you always have to keep plugged in', 'TV', 'phone', 'computer', 'lamp', 'headphones', 'computer mouse');
+new SurveyQuestionSet ('Name something you always have to keep plugged in', 'tv', 'phone', 'computer', 'lamp', 'headphones', 'computer mouse');
 new SurveyQuestionSet ('Name a metal old coins might be made out of', 'silver', 'gold', 'copper', 'bronze', 'zinc', 'steel');
 new SurveyQuestionSet ('Name a superhero member of the Justice League', 'superman', 'wonder woman', 'aquaman', 'the flash', 'cyborg');
 new SurveyQuestionSet ('Name a type of bear', 'grizzly', 'polar', 'panda', 'teddy', 'brown', 'black');
@@ -94,11 +94,11 @@ function showWrongAnswer(){
   }
 }
 
+var score = document.getElementById('score');
 //function to render player score
 function renderScore(){
-  var scoreData = document.createElement('h4');
-  scoreData.textContent = playerScore;
-  scoreBoardBox.appendChild(scoreData);
+  score.innerHTML = '';
+  score.textContent = playerScore;
 }
 
 //event handler function for answer submit button
@@ -106,7 +106,7 @@ function renderScore(){
   //track and render current score
 function checkAnswer(event){
   event.preventDefault();
-  var playerAnswer = event.target.answerForm.value;
+  var playerAnswer = event.target.answerForm.value.toLowerCase();
   var answeredCorrectly = false;
   for(var i=0; i < surveyQuestionAndAnswerArray.length; i++){
     if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer1){
