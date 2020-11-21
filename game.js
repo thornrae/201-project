@@ -85,7 +85,7 @@ function displayRandomSurveyQuestion () {
     currentSurveyQuestionIndex = randomizeSurveyQuestion(surveyQuestionAndAnswerArray.length);
   }
   previouslyRendered.push(currentSurveyQuestionIndex);
-  console.log(currentSurveyQuestionIndex);
+  console.log('current survey index: ' + currentSurveyQuestionIndex);
 
   var renderedQuestion = document.createElement('h4');
   renderedQuestion.textContent = surveyQuestionAndAnswerArray[currentSurveyQuestionIndex].surveyQuestion;
@@ -112,10 +112,16 @@ function showWrongAnswer(){
   }
 }
 
-var answerInput = document.getElementById('answerinput');
+function renderScore(){
+  var scoreData = document.createElement('h4');
+  scoreData.textContent = playerScore;
+  scoreBoardBox.appendChild(scoreData);
+}
+
+// var answerInput = document.getElementById('answerinput');
 function checkAnswer(event){
   event.preventDefault();
-  answerInput.value = '';
+  // answerInput.value = '';
   var playerAnswer = event.target.answerForm.value;
   var answeredCorrectly = false;
   for(var i=0; i < surveyQuestionAndAnswerArray.length; i++){
@@ -127,9 +133,10 @@ function checkAnswer(event){
       answeredCorrectly = true;
 
       playerScore += 6;
-      console.log(playerScore);
 
-    } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer2){
+      // console.log('top answer ' + playerScore);
+
+    }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer2){
       var secondAnswerData = document.createElement('h4');
       secondAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer2;
       surveyAnswerTwo.appendChild(secondAnswerData);
@@ -139,7 +146,8 @@ function checkAnswer(event){
       playerScore += 5;
 
 
-    } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer3){
+
+    }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer3){
       var thirdAnswerData = document.createElement('h4');
       thirdAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer3;
       surveyAnswerThree.appendChild(thirdAnswerData);
@@ -147,7 +155,7 @@ function checkAnswer(event){
       answeredCorrectly = true;
 
       playerScore += 4;
-    } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer4){
+    }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer4){
       var fourthAnswerData = document.createElement('h4');
       fourthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer4;
       surveyAnswerFour.appendChild(fourthAnswerData);
@@ -173,15 +181,20 @@ function checkAnswer(event){
       playerScore +=1;
     }
   }
+  // renderScore();
+  event.target.answerForm.value = null;
   if (answeredCorrectly === false) {
     wrongAnswerTracker++; //if wrong answer === 3, end game
-    console.log(wrongAnswerTracker);
+    console.log('wrong answer :' + wrongAnswerTracker);
     showWrongAnswer();
   }
   if (wrongAnswerTracker === 3){
     console.log('game over');
   }
 }
+
+
+
 
 
 //render wrong red x function that is called in the else if answer doesnt equal logic
