@@ -155,7 +155,7 @@ function checkAnswer(event){
       answeredCorrectly = true;
 
       playerScore +=3;
-    }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer5){
+    } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer5){
       var fifthAnswerData = document.createElement('h4');
       fifthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer5;
       surveyAnswerFive.appendChild(fifthAnswerData);
@@ -163,7 +163,7 @@ function checkAnswer(event){
       answeredCorrectly = true;
       playerScore +=2;
 
-    }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer6){
+    } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer6){
       var sixthAnswerData = document.createElement('h4');
       sixthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer6;
       surveyAnswerSix.appendChild(sixthAnswerData);

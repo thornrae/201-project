@@ -1,6 +1,66 @@
+header  {
+}
+
 body {
   background-color: navy;
-  color: whitesmoke;
+  color:;
   text-align: center;
   margin:auto;
+}
+section {
+  width: 700px;
+  margin: auto;
+  border: 5px solid red;
+}
+  li a {
+  padding: 3px;
+  width: 100%;
+  color: #990000;
+  float:20px;
+  height:35px;
+  display: inline;
+
+}
+
+.container3 {
+  display: inline;
+}
+
+.container1 {
+  float: left;;
+  height:25px;
+  background: lightblue;
+  margin: 150px;
+  width:100%;
+  text-align: center;
+  float: bottom;
+}
+
+.container2 {
+  width: 400px;
+  color: #990000;
+}
+
+img {
+  width: 500px;
+}
+
+P {
+  float: center;
+  margin-right: 3px;
+  padding: left;
+}
+h2 {
+  
+  margin: 0px;
+  width:100%;
+}
+div.card {
+  padding-inline: 10px;
+  padding: 10px;
+  padding: left;
+}
+div {
+  background: rgb(77, 117, 228);
+  float: left;
 }
