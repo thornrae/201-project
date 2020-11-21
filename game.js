@@ -9,17 +9,11 @@ var scoreBoardBox = document.getElementById('scoreboard-box');
 var scoreboard = document.getElementById('scoreboard');
 var surveyQuestionEl = document.getElementById('question-box');
 var surveyAnswerOne = document.getElementById('answer-one');
-// var topAnswer = document.getElementById('top-answer');
 var surveyAnswerTwo = document.getElementById('answer-two');
-// var secondAnswer = document.getElementById('answer-two');
 var surveyAnswerThree = document.getElementById('answer-three');
-// var thirdAnswer = document.getElementById('answer-four');
 var surveyAnswerFour = document.getElementById('answer-four');
-// var fourthAnswer = document.getElementById('answer-four');
 var surveyAnswerFive = document.getElementById('answer-five');
-// var fifthAnswer = document.getElementById('answer-five');
 var surveyAnswerSix = document.getElementById('answer-six');
-// var sixthAnswer = document.get
 var surveyBoxes = document.getElementsByClassName('answer-box');
 var answerContainer = document.getElementById('answer-submit');
 var answerForm = document.getElementById('answerform');
@@ -27,16 +21,15 @@ var playNowBox = document.getElementById('play-now');
 var playNowButton = document.getElementById('play-now-button');
 var answerContainer = document.getElementById('survey-answers');
 
-// display welcome message to user showing playername
+//(low priority) display welcome message to user showing playername
 
 //variables
-
-
-//create constructor to instantiate survey questions and answers
-
 var surveyQuestionAndAnswerArray = [];
-console.log(surveyQuestionAndAnswerArray);
+var previouslyRendered = [];
+var playerScore = 0;
+var wrongAnswerTracker = 0;
 
+//constructor to instantiate survey questions and answers
 function SurveyQuestionSet (surveyQuestion, surveyAnswer1, surveyAnswer2, surveyAnswer3, surveyAnswer4, surveyAnswer5, surveyAnswer6) {
   this.surveyQuestion = surveyQuestion;
   this.surveyAnswer1 = surveyAnswer1;
@@ -57,31 +50,19 @@ new SurveyQuestionSet ('Name a metal old coins might be made out of', 'silver', 
 new SurveyQuestionSet ('Name a superhero member of the Justice League', 'superman', 'wonder woman', 'aquaman', 'the flash', 'cyborg');
 new SurveyQuestionSet ('Name a type of bear', 'grizzly', 'polar', 'panda', 'teddy', 'brown', 'black');
 
-
-
-//add event listener on the play now button
-//create event handler function: change the display of
-//playNow event listener
-// playNowButton.addEventListener('click', playNow);
+//event listener for submit answer button
 answerForm.addEventListener('submit', checkAnswer);
-
-
-
-//add event listener on the submit answer button
-//create event handler function
-
-
-//create a function to display random survey question, make sure that the next survey question is different from the previous (or even different from the last 5 survey questions)
 
 function randomizeSurveyQuestion (max){
   return Math.floor(Math.random() * max);
 }
 
-var previouslyRendered = [];
-
+//function to display random survey question
+  //current logic is trying to make sure that the same question question isn't repeated back to back
+      //another option- make sure that no questions repeat in a single user session
 function displayRandomSurveyQuestion () {
   var currentSurveyQuestionIndex = randomizeSurveyQuestion (surveyQuestionAndAnswerArray.length);
-  while(previouslyRendered.includes(currentSurveyQuestionIndex)){
+  while(previouslyRendered === currentSurveyQuestionIndex){
     currentSurveyQuestionIndex = randomizeSurveyQuestion(surveyQuestionAndAnswerArray.length);
   }
   previouslyRendered.push(currentSurveyQuestionIndex);
@@ -91,19 +72,20 @@ function displayRandomSurveyQuestion () {
   renderedQuestion.textContent = surveyQuestionAndAnswerArray[currentSurveyQuestionIndex].surveyQuestion;
   surveyQuestionEl.appendChild(renderedQuestion);
 }
+displayRandomSurveyQuestion();
 
-//  timer(seconds){
-//   var timeLeft = 120;
-// }
+//create a timer function
 
-// function playNow(event) {
-//   //invoke timer function?
-// }
+//create event handler function for the play now button
+    //ceate event listener
+    //display random question (invoke displayRandomSurveyQuestion function here)
+    //invoke timer function
+    //hide button
 
-//render the point function will be outside of this checkAnswer function
-var playerScore = 0;
-var wrongAnswerTracker = 0;
-
+    
+//function to show wrong answer alert
+  //replace content generated to img
+  //add buzzer sound
 function showWrongAnswer(){
   if(wrongAnswerTracker > 0){
     var incorrect = document.createElement('h4');
@@ -112,16 +94,18 @@ function showWrongAnswer(){
   }
 }
 
+//function to render player score
 function renderScore(){
   var scoreData = document.createElement('h4');
   scoreData.textContent = playerScore;
   scoreBoardBox.appendChild(scoreData);
 }
 
-// var answerInput = document.getElementById('answerinput');
+//event handler function for answer submit button
+  //if answer is correct, render answer to the DOM, add points to score
+  //track and render current score
 function checkAnswer(event){
   event.preventDefault();
-  // answerInput.value = '';
   var playerAnswer = event.target.answerForm.value;
   var answeredCorrectly = false;
   for(var i=0; i < surveyQuestionAndAnswerArray.length; i++){
@@ -144,8 +128,6 @@ function checkAnswer(event){
       answeredCorrectly = true;
 
       playerScore += 5;
-
-
 
     }else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer3){
       var thirdAnswerData = document.createElement('h4');
@@ -181,7 +163,7 @@ function checkAnswer(event){
       playerScore +=1;
     }
   }
-  // renderScore();
+  renderScore(playerScore);
   event.target.answerForm.value = null;
   if (answeredCorrectly === false) {
     wrongAnswerTracker++; //if wrong answer === 3, end game
@@ -193,31 +175,25 @@ function checkAnswer(event){
   }
 }
 
+//write a function for what happens when:
+  //user gets three answers wrong
+  //timer runs out
 
-
-
-
-//render wrong red x function that is called in the else if answer doesnt equal logic
-displayRandomSurveyQuestion();
-
-
-
-
+//connect local storage
 
 
 
 
 
 
-//create function to initialize game - essentially invoking the generate random survey question function, loading local storage, and the timer
 
-//create timer function
 
-//create a wrong answer display function
 
-//create correct answer display function (survey answers renders to the browser)
 
-//create function to generate next question when all survey answers are provided? "give me another question" ?
+
+
+
+
 
 
 
