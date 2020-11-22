@@ -30,6 +30,10 @@ var parsedretrievedScore = JSON.parse(retrievedPlayerScore);
 
 new Player(parsedretrievedPlayer,parsedretrievedScore);
 
+var stringifiedResults = JSON.stringify(playerDataArray);
+console.log(stringifiedResults);
+localStorage.setItem('playerResults', stringifiedResults);
+
 console.log('player data: ' + playerDataArray);
 
 
