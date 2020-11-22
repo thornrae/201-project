@@ -214,6 +214,8 @@ function checkAnswer(event) {
     showWrongAnswer();
   }
   if (wrongAnswerTracker === 3){
+    console.log('game over');
+    localStorage.setItem('playerScore', playerScore);
     gameOver();
   }
 }
