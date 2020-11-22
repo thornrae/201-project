@@ -20,7 +20,7 @@ var answerForm = document.getElementById('answerform');
 var playNowBox = document.getElementById('play-now');
 var playNowButton = document.getElementById('play-now-button');
 var answerContainer = document.getElementById('survey-answers');
-
+var questionContainer = document.getElementById('survey-question');
 //(low priority) display welcome message to user showing playername
 
 //variables
@@ -42,16 +42,19 @@ function SurveyQuestionSet(surveyQuestion, surveyAnswer1, surveyAnswer2, surveyA
   surveyQuestionAndAnswerArray.push(this);
 }
 
-new SurveyQuestionSet('Tell us something that many people do just once a week', 'church', 'grocery shop', 'laundry', 'clean house', 'sleep in', 'eat out');
-new SurveyQuestionSet('Name something you might eat with a hamburger', 'french fries', 'soup', 'salad', 'onion rings', 'tater tots', 'pickles');
-new SurveyQuestionSet('How long is an "unbearable" commute?', '1 hour', '30 minutes', '45 minutes', '2 hours', '1.5 hours');
-new SurveyQuestionSet('Name something you always have to keep plugged in', 'TV', 'phone', 'computer', 'lamp', 'headphones', 'computer mouse');
-new SurveyQuestionSet('Name a metal old coins might be made out of', 'silver', 'gold', 'copper', 'bronze', 'zinc', 'steel');
-new SurveyQuestionSet('Name a superhero member of the Justice League', 'superman', 'wonder woman', 'aquaman', 'the flash', 'cyborg');
-new SurveyQuestionSet('Name a type of bear', 'grizzly', 'polar', 'panda', 'teddy', 'brown', 'black');
+
+new SurveyQuestionSet ('Tell us something that many people do just once a week', 'church', 'grocery shop', 'laundry', 'clean house', 'sleep in', 'eat out');
+new SurveyQuestionSet ('Name something you might eat with a hamburger', 'french fries', 'soup', 'salad', 'onion rings', 'tater tots', 'pickles');
+new SurveyQuestionSet ('How long is an "unbearable" commute?', '1 hour', '30 minutes', '45 minutes', '2 hours', '1.5 hours');
+new SurveyQuestionSet ('Name something you always have to keep plugged in', 'tv', 'phone', 'computer', 'lamp', 'headphones', 'computer mouse');
+new SurveyQuestionSet ('Name a metal old coins might be made out of', 'silver', 'gold', 'copper', 'bronze', 'zinc', 'steel');
+new SurveyQuestionSet ('Name a superhero member of the Justice League', 'superman', 'wonder woman', 'aquaman', 'the flash', 'cyborg');
+new SurveyQuestionSet ('Name a type of bear', 'grizzly', 'polar', 'panda', 'teddy', 'brown', 'black');
+
 
 //event listener for submit answer button
 answerForm.addEventListener('submit', checkAnswer);
+playNowButton.addEventListener('click', playNow);
 
 function randomizeSurveyQuestion(max) {
   return Math.floor(Math.random() * max);
@@ -72,7 +75,7 @@ function displayRandomSurveyQuestion() {
   renderedQuestion.textContent = surveyQuestionAndAnswerArray[currentSurveyQuestionIndex].surveyQuestion;
   surveyQuestionEl.appendChild(renderedQuestion);
 }
-displayRandomSurveyQuestion();
+
 
 
 
@@ -111,28 +114,34 @@ function timer() {
 
 
 //create event handler function for the play now button
-//ceate event listener
-//display random question (invoke displayRandomSurveyQuestion function here)
-//invoke timer function
-//hide button
+    //ceate event listener-COMPLETED
+    //invoke timer function
+function playNow(event){
+  //hide play now button
+  playNowBox.style.visibility = 'hidden';
+      //display random question (invoke displayRandomSurveyQuestion function here)
+  displayRandomSurveyQuestion();
+}
+
 
 
 //function to show wrong answer alert
-//replace content generated to img
-//add buzzer sound
-function showWrongAnswer() {
-  if (wrongAnswerTracker > 0) {
+  //replace content generated to img-UPDATED TO RENDER A RED "X"
+  //add buzzer sound
+function showWrongAnswer(){
+  if(wrongAnswerTracker > 0){
     var incorrect = document.createElement('h4');
-    incorrect.textContent = 'wrong';
+    incorrect.textContent = 'X';
     wrongAnswer.appendChild(incorrect);
   }
 }
 
+var score = document.getElementById('score');
 //function to render player score
-function renderScore() {
-  var scoreData = document.createElement('h4');
-  scoreData.textContent = playerScore;
-  scoreBoardBox.appendChild(scoreData);
+
+function renderScore(){
+  score.innerHTML = '';
+  score.textContent = playerScore;
 }
 
 //event handler function for answer submit button
@@ -140,7 +149,7 @@ function renderScore() {
 //track and render current score
 function checkAnswer(event) {
   event.preventDefault();
-  var playerAnswer = event.target.answerForm.value;
+  var playerAnswer = event.target.answerForm.value.toLowerCase();
   var answeredCorrectly = false;
   for (var i = 0; i < surveyQuestionAndAnswerArray.length; i++) {
     if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer1) {
@@ -204,8 +213,8 @@ function checkAnswer(event) {
     console.log('wrong answer :' + wrongAnswerTracker);
     showWrongAnswer();
   }
-  if (wrongAnswerTracker === 3) {
-    console.log('game over');
+  if (wrongAnswerTracker === 3){
+    gameOver();
   }
 }
 
@@ -214,6 +223,18 @@ playNowBox.addEventListener('click', timer)
 //write a function for what happens when:
   //user gets three answers wrong
   //timer runs out
+function gameOver(){
+  timerBox.style.visibility = 'hidden';
+  wrongAnswer.style.visibility = 'hidden';
+  scoreBoardBox.style.visibility = 'hidden';
+  answerContainer.style.visibility = 'hidden';
+  surveyQuestionEl.style.visibility = 'hidden';
+  questionContainer.style.visibility = 'hidden';
+  answerForm.style.visibility = 'hidden';
+  //create a "click here for results" button
+  //make click here for results button visible
+  //link that button so it takes you to results page
+}
 
 //connect local storage
 
