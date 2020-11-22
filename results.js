@@ -12,22 +12,25 @@
 
 
 //variables
-var playerName;
+// var playerName;
 var playerDataArray = [];
 
+
 // constructor with properties of playerName
-function Player(name) {
-  this.name = name;
-  this.highScore = 0;
+function Player(playerName, playerScore) {
+  this.name = playerName;
+  this.playerScore = playerScore;
   playerDataArray.push(this);
 }
 
+var retrievedPlayerName = localStorage.getItem('playerName');
+var parsedretrievedPlayer = JSON.parse(retrievedPlayerName);
+var retrievedPlayerScore = localStorage.getItem('playerScore');
+var parsedretrievedScore = JSON.parse(retrievedPlayerScore);
 
+new Player(parsedretrievedPlayer,parsedretrievedScore);
 
-
-
-
-
+console.log('player data: ' + playerDataArray);
 
 
 

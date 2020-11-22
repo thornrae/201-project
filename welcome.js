@@ -28,7 +28,7 @@ function handleSubmit(event) {
   // stores player name to local storage
   var stringifiedPlayerName = JSON.stringify(playerName);
   localStorage.setItem('playerName', stringifiedPlayerName);
-  console.log(stringifiedPlayerName);
+  // console.log(stringifiedPlayerName);
   // clears name from form after player hits submit
   document.getElementById('playernameform').reset();
 }

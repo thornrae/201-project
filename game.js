@@ -43,13 +43,13 @@ function SurveyQuestionSet(surveyQuestion, surveyAnswer1, surveyAnswer2, surveyA
 }
 
 
-new SurveyQuestionSet ('Tell us something that many people do just once a week', 'church', 'grocery shop', 'laundry', 'clean house', 'sleep in', 'eat out');
-new SurveyQuestionSet ('Name something you might eat with a hamburger', 'french fries', 'soup', 'salad', 'onion rings', 'tater tots', 'pickles');
-new SurveyQuestionSet ('How long is an "unbearable" commute?', '1 hour', '30 minutes', '45 minutes', '2 hours', '1.5 hours');
-new SurveyQuestionSet ('Name something you always have to keep plugged in', 'tv', 'phone', 'computer', 'lamp', 'headphones', 'computer mouse');
-new SurveyQuestionSet ('Name a metal old coins might be made out of', 'silver', 'gold', 'copper', 'bronze', 'zinc', 'steel');
-new SurveyQuestionSet ('Name a superhero member of the Justice League', 'superman', 'wonder woman', 'aquaman', 'the flash', 'cyborg');
-new SurveyQuestionSet ('Name a type of bear', 'grizzly', 'polar', 'panda', 'teddy', 'brown', 'black');
+new SurveyQuestionSet('Tell us something that many people do just once a week', 'church', 'grocery shop', 'laundry', 'clean house', 'sleep in', 'eat out');
+new SurveyQuestionSet('Name something you might eat with a hamburger', 'french fries', 'soup', 'salad', 'onion rings', 'tater tots', 'pickles');
+new SurveyQuestionSet('How long is an "unbearable" commute?', '1 hour', '30 minutes', '45 minutes', '2 hours', '1.5 hours');
+new SurveyQuestionSet('Name something you always have to keep plugged in', 'tv', 'phone', 'computer', 'lamp', 'headphones', 'computer mouse');
+new SurveyQuestionSet('Name a metal old coins might be made out of', 'silver', 'gold', 'copper', 'bronze', 'zinc', 'steel');
+new SurveyQuestionSet('Name a superhero member of the Justice League', 'superman', 'wonder woman', 'aquaman', 'the flash', 'cyborg');
+new SurveyQuestionSet('Name a type of bear', 'grizzly', 'polar', 'panda', 'teddy', 'brown', 'black');
 
 
 //event listener for submit answer button
@@ -96,17 +96,30 @@ function displayRandomSurveyQuestion() {
 
 // prevent timer from starting during the menu scene:
 
+function gameOver() {
+  timerBox.style.visibility = 'hidden';
+  wrongAnswer.style.visibility = 'hidden';
+  scoreBoardBox.style.visibility = 'hidden';
+  answerContainer.style.visibility = 'hidden';
+  surveyQuestionEl.style.visibility = 'hidden';
+  questionContainer.style.visibility = 'hidden';
+  answerForm.style.visibility = 'hidden';
+  var stringifiedPlayerScore = JSON.stringify(playerScore);
+  localStorage.setItem('playerScore', stringifiedPlayerScore);
+}
+
 
 //create a timer function
+var countFrom = 15;
 function timer() {
 
-  var countFrom = 15;
   var timeBox = setInterval(function startCountdown() {
-    timerBox.innerHTML = countFrom + 'seconds remaining';
+    timerBox.innerHTML = countFrom + ' seconds remaining';
     countFrom -= 1;
     if (countFrom <= 0) {
       clearInterval(timeBox);
       timerBox.innerHTML = "Game Over";
+      gameOver();
     }
   }, 1000);
 }
@@ -114,22 +127,22 @@ function timer() {
 
 
 //create event handler function for the play now button
-    //ceate event listener-COMPLETED
-    //invoke timer function
-function playNow(event){
+//ceate event listener-COMPLETED
+//invoke timer function
+function playNow(event) {
   //hide play now button
   playNowBox.style.visibility = 'hidden';
-      //display random question (invoke displayRandomSurveyQuestion function here)
+  //display random question (invoke displayRandomSurveyQuestion function here)
   displayRandomSurveyQuestion();
 }
 
 
 
 //function to show wrong answer alert
-  //replace content generated to img-UPDATED TO RENDER A RED "X"
-  //add buzzer sound
-function showWrongAnswer(){
-  if(wrongAnswerTracker > 0){
+//replace content generated to img-UPDATED TO RENDER A RED "X"
+//add buzzer sound
+function showWrongAnswer() {
+  if (wrongAnswerTracker > 0) {
     var incorrect = document.createElement('h4');
     incorrect.textContent = 'X';
     wrongAnswer.appendChild(incorrect);
@@ -139,7 +152,7 @@ function showWrongAnswer(){
 var score = document.getElementById('score');
 //function to render player score
 
-function renderScore(){
+function renderScore() {
   score.innerHTML = '';
   score.textContent = playerScore;
 }
@@ -213,30 +226,29 @@ function checkAnswer(event) {
     console.log('wrong answer :' + wrongAnswerTracker);
     showWrongAnswer();
   }
-  if (wrongAnswerTracker === 3){
+  if (wrongAnswerTracker === 3) {
     console.log('game over');
-    localStorage.setItem('playerScore', playerScore);
     gameOver();
   }
 }
 
-playNowBox.addEventListener('click', timer)
+playNowBox.addEventListener('click', timer);
 
 //write a function for what happens when:
   //user gets three answers wrong
   //timer runs out
-function gameOver(){
-  timerBox.style.visibility = 'hidden';
-  wrongAnswer.style.visibility = 'hidden';
-  scoreBoardBox.style.visibility = 'hidden';
-  answerContainer.style.visibility = 'hidden';
-  surveyQuestionEl.style.visibility = 'hidden';
-  questionContainer.style.visibility = 'hidden';
-  answerForm.style.visibility = 'hidden';
-  //create a "click here for results" button
-  //make click here for results button visible
-  //link that button so it takes you to results page
-}
+// function gameOver(){
+//   timerBox.style.visibility = 'hidden';
+//   wrongAnswer.style.visibility = 'hidden';
+//   scoreBoardBox.style.visibility = 'hidden';
+//   answerContainer.style.visibility = 'hidden';
+//   surveyQuestionEl.style.visibility = 'hidden';
+//   questionContainer.style.visibility = 'hidden';
+//   answerForm.style.visibility = 'hidden';
+//   create a "click here for results" button
+//   make click here for results button visible
+//   link that button so it takes you to results page
+// }
 
 //connect local storage
 
