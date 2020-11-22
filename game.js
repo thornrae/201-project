@@ -172,6 +172,7 @@ function checkAnswer(event){
   }
   if (wrongAnswerTracker === 3){
     console.log('game over');
+    localStorage.setItem('playerScore', playerScore);
   }
 }
 
