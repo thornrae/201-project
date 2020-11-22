@@ -1,19 +1,12 @@
 'use strict';
+
 //Elements from the DOM
 var playerForm = document.getElementById('playernameform');
 var playMessage = document.getElementById('gogame');
 var playerNameSection = document.getElementById('player-name-section');
 var goToGame = document.getElementById('gotogame');
-//variables
-// var playerName;
-// var playerDataArray = [];
-// constructor with properties of playerName
-// function Player(name) {
-//   this.name = name;
-//   this.highScore = 0;
-//   playerDataArray.push(this);
-// }
-//button hides results until presssed
+
+//button hides rules until presssed
 function buttonFunction() {
   var x = document.getElementById('rules');
   if (x.style.display === 'none') {
@@ -33,8 +26,9 @@ function handleSubmit(event) {
   goToGame.style.display = 'block';
   playMessage.textContent = `${playerName}, Let's Play!`;
   // stores player name to local storage
-  localStorage.setItem('playerName', playerName);
-  //console.log(playerName);
+  var stringifiedPlayerName = JSON.stringify(playerName);
+  localStorage.setItem('playerName', stringifiedPlayerName);
+  console.log(stringifiedPlayerName);
   // clears name from form after player hits submit
   document.getElementById('playernameform').reset();
 }
