@@ -81,24 +81,33 @@ justify-content: space-between;
   height: 150px;
   display: inline-block;
   border: 1px solid black;
+  font-family: 'Poppins', sans-serif;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #incorrect-answer-box {
   width: 150px;
   display: inline-block;
-  border: 1px solid black;
 }
 
 #scoreboard-box{
   width: 150px;
   display: inline-block;
   border: 1px solid black;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  padding: 5px;
 }
 
-/* 
-section {
-  border: 1px solid black;
-} */
+#wrong-answer{
+  color: red;
+  font-size: 50px;
+  text-align: center;
+}
+
 
 #play-now {
 width: 300px;
@@ -119,6 +128,7 @@ margin: auto;
   border: 1px solid black;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
+  padding: 10px;
 }
 
 .answer-box {
@@ -137,46 +147,24 @@ margin: auto;
   border: 1px solid black;
   margin-bottom: 10px;
   text-align: center;
-}
-
-
-
-/* #answer-one {
-  
 
 }
 
-#answer-two {
-  border: 1px solid black;
-}
-
-#answer-three {
-  border: 1px solid black;
-}
-
-#answer-four {
-  border: 1px solid black;
-}
-
-#answer-five {
-  border: 1px solid black;
-}
-
-#answer-six {
-  border: 1px solid black;
-} */
 
 #answer-submit {
-  width: 500px;
+  width: 700px;
   margin: auto;
   margin-bottom: 25px;
+  text-align: center;
+}
+
+#answerform {
+  font-family: 'Poppins', sans-serif;
 }
 
 footer {
   width: 100%;
   height: 100px;
-  /* background-color: #0504AA; */
-  /* clear: both; */
   height: 150px;
 }
 
@@ -190,7 +178,6 @@ footer h2 {
   padding: 20px;
   margin-left: 20px;
   margin-top: 20px;
-  /* margin-top: 10px; */
   text-align: center;
   text-shadow: 2px 2px gray;
   box-shadow: 6px 6px lightgrey;

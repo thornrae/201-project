@@ -20,7 +20,7 @@ var answerForm = document.getElementById('answerform');
 var playNowBox = document.getElementById('play-now');
 var playNowButton = document.getElementById('play-now-button');
 var answerContainer = document.getElementById('survey-answers');
-
+var questionContainer = document.getElementById('survey-question');
 //(low priority) display welcome message to user showing playername
 
 //variables
@@ -52,6 +52,7 @@ new SurveyQuestionSet ('Name a type of bear', 'grizzly', 'polar', 'panda', 'tedd
 
 //event listener for submit answer button
 answerForm.addEventListener('submit', checkAnswer);
+playNowButton.addEventListener('click', playNow);
 
 function randomizeSurveyQuestion (max){
   return Math.floor(Math.random() * max);
@@ -72,24 +73,29 @@ function displayRandomSurveyQuestion () {
   renderedQuestion.textContent = surveyQuestionAndAnswerArray[currentSurveyQuestionIndex].surveyQuestion;
   surveyQuestionEl.appendChild(renderedQuestion);
 }
-displayRandomSurveyQuestion();
+
 
 //create a timer function
 
 //create event handler function for the play now button
-    //ceate event listener
-    //display random question (invoke displayRandomSurveyQuestion function here)
+    //ceate event listener-COMPLETED
     //invoke timer function
-    //hide button
+function playNow(event){
+  //hide play now button
+  playNowBox.style.visibility = 'hidden';
+      //display random question (invoke displayRandomSurveyQuestion function here)
+  displayRandomSurveyQuestion();
+}
 
-    
+
+
 //function to show wrong answer alert
-  //replace content generated to img
+  //replace content generated to img-UPDATED TO RENDER A RED "X"
   //add buzzer sound
 function showWrongAnswer(){
   if(wrongAnswerTracker > 0){
     var incorrect = document.createElement('h4');
-    incorrect.textContent = 'wrong';
+    incorrect.textContent = 'X';
     wrongAnswer.appendChild(incorrect);
   }
 }
@@ -171,13 +177,25 @@ function checkAnswer(event){
     showWrongAnswer();
   }
   if (wrongAnswerTracker === 3){
-    console.log('game over');
+    gameOver();
   }
 }
 
 //write a function for what happens when:
   //user gets three answers wrong
   //timer runs out
+function gameOver(){
+  timerBox.style.visibility = 'hidden';
+  wrongAnswer.style.visibility = 'hidden';
+  scoreBoardBox.style.visibility = 'hidden';
+  answerContainer.style.visibility = 'hidden';
+  surveyQuestionEl.style.visibility = 'hidden';
+  questionContainer.style.visibility = 'hidden';
+  answerForm.style.visibility = 'hidden';
+  //create a "click here for results" button
+  //make click here for results button visible
+  //link that button so it takes you to results page
+}
 
 //connect local storage
 

@@ -4,3 +4,21 @@ body {
   text-align: center;
   margin:auto;
 }
+
+#player-name-section {
+  /* display: none; */
+}
+#rules {
+  display: none;
+}
+#gotogame {
+  display: none;
+}
+#gamestart {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: chartreuse;
+  cursor: pointer;
+  margin: auto;
+}
