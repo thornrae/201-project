@@ -1,8 +1,10 @@
 header  {
 }
 
-body header {
-  background-color: ;  
+
+body {
+  background-color: navy;
+  color:white;
   text-align: center;
   margin:auto;
   
