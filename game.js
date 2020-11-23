@@ -106,7 +106,7 @@ function timer() {
     countFrom -= 1;
     if (countFrom <= 0) {
       clearInterval(timeBox);
-      timerBox.innerHTML = "Game Over";
+      timerBox.innerHTML = "Times Up! Game Over";
       gameOver();
     }
   }, 1000);
