@@ -52,7 +52,7 @@ new SurveyQuestionSet('Name something you have to do that would give you a reaso
 new SurveyQuestionSet('Name a country with a large population', 'china', 'india', 'united states', 'brazil', 'mexico', 'indonesia');
 new SurveyQuestionSet('Other than letters, name something people get in the mail', 'junk mail', 'magazines', 'bills', 'packages', 'postcards', 'checks');
 new SurveyQuestionSet('Name a common candy bar componenet', 'chocolate', 'peanuts', 'caramel', 'almonds', 'nougat', 'coconut');
-new SurveyQuestionSet('Name a state that has a lot of sports teams', 'new york', 'california', 'florida', 'pennsylvania', 'illinois');
+new SurveyQuestionSet('Name a state that has a lot of sports teams', 'new york', 'california', 'florida', 'pennsylvania', 'illinois', 'texas');
 
 //event listener for submit answer button
 answerForm.addEventListener('submit', checkAnswer);
@@ -98,7 +98,7 @@ function gameOver() {
 
 
 //create a timer function
-var countFrom = 30;
+var countFrom = 500;
 function timer() {
 
   var timeBox = setInterval(function startCountdown() {
@@ -146,14 +146,15 @@ function renderScore() {
 }
 
 function nextQuestion(){
+  answerCorrect = 0;
   surveyQuestionEl.innerHTML = '';
-  displayRandomSurveyQuestion();
   surveyAnswerOne.innerHTML = '';
   surveyAnswerTwo.innerHTML = '';
   surveyAnswerThree.innerHTML = '';
   surveyAnswerFour.innerHTML = '';
   surveyAnswerFive.innerHTML = '';
   surveyAnswerSix.innerHTML = '';
+  displayRandomSurveyQuestion();
 }
 
 //event handler function for answer submit button
@@ -176,10 +177,7 @@ function checkAnswer(event) {
 
       playerScore += 6;
       answerCorrect ++;
-
-
       // console.log('top answer ' + playerScore);
-
     } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer2) {
       var secondAnswerData = document.createElement('h4');
       secondAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer2;
