@@ -12,9 +12,11 @@
 
 
 //variables
-// var playerName;
 var playerDataArray = [];
-
+var retrievedResults = localStorage.getItem('playerResults');
+if (retrievedResults){
+  playerDataArray = JSON.parse(retrievedResults);
+}
 
 // constructor with properties of playerName
 function Player(playerName, playerScore) {
@@ -37,9 +39,18 @@ localStorage.setItem('playerResults', stringifiedResults);
 console.log('player data: ' + playerDataArray);
 
 
+// var users = [
+//   { name: 'Taylor', score: 63 },
+//   { name: 'Thomas', score: 74 },
+//   { name: 'Matthew',score: 96 },
+//   { name: 'Dawit', score:  9 },
+// ];
 
-
-
+// //sort by value
+// function descending (a,b){
+//   return b.score - a.score;
+// }
+// console.log(users.sort(descending));
 
 
 
