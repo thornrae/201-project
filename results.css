@@ -1,0 +1,37 @@
+body {
+  background-color: navy;
+  color: whitesmoke;
+  text-align: center;
+  margin:auto;
+}
+
+
+table {
+  background-color: lightblue;
+  color: black;
+  margin: auto;
+  display: block;
+  width: 205px;
+}
+
+tr {
+  border: 1px solid black;
+  width: 203px;
+  margin: auto;
+  display: block;
+}
+
+td {
+  border: black 1px;
+  color: red;
+  margin: auto;
+  display: block;
+  text-align: right;
+}
+
+
+th {
+  border-right: 1px blueviolet;
+  color: blueviolet;
+}
+
