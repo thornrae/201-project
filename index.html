@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link href="reset.css" rel="stylesheet">
   <link href="homepage.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@800&family=Poppins:wght@300&display=swap" rel="stylesheet">
+
   <title>Survey Says</title>
 </head>
 <style>
@@ -19,24 +21,23 @@
 </style>
 <body>
   <header id="header">
-    <h1>Welcome to the Survey Says!</h1>
+    <h2> <span class="survey">Survey</span> <span class="says">Says</span></h2>
     <nav>
-      <ul id="ulOne">
+      <ul class="ulOne">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="results.html">Results</a></li>
       </ul>
     </nav>
-
   </header>
   <main>
-      <button id ="mybutton">Game Rules</button> 
-      <p id="Rules"></p>
+    <h1>Welcome to Survey Says!</h1>
+      <h3 id="Rules"></h3>
 
     <br>
     <br />
     <section id="container">
-    <form id="rules">
+    <div id="rules">
       <!-- <h2>Here's how the survery's played</h2> -->
       <p>Welcome to Survey Says, a Family Feud style game 
         you can play on your own, without a family.  
@@ -46,9 +47,7 @@
         before responding with the top six survey answers, 
         the game is over.  We don't have Steve Harvey, 
         but we do think you will enjoy this game.  Have fun!</p>
-      
-      <p>Get the rules for the Feud</p>
-    </form>
+    </div>
     </section>
 
     <section id="player-name-section">
@@ -69,21 +68,23 @@
       </a>
     </section>
   </main>
-  <footer id="footer">
-    <h3>Survey Says</h3>
-    <!-- <ul id="ulOne"> -->
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="results.html">Results</a></li>
-    <!-- </ul> -->
-    &copy; Powered by Survey Says 2020
-  </footer>
+
   <script src="welcome.js"></script>
   <script>
     document.getElementById("mybutton").addEventListener("click", function() {
       document.getElementById("Rules").innerHTML = "The rules are rules and you are going to follow them you like it or not!";
     });
     </script>
+
+<footer id="footer">
+  <h2> <span class="survey">Survey</span> <span class="says">Says</span></h2>
+  <ul class="ulOne">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="results.html">Results</a></li>
+  </ul>
+  <p id="copyright">&copy; Powered by Survey Says 2020</p>
+</footer>
     
 </body>
 </html>
