@@ -1,5 +1,4 @@
 body {
-  background-color: navy;
   color: whitesmoke;
   text-align: center;
   margin:auto;
@@ -8,10 +7,10 @@ body {
 
 table {
   
-  background-color: lightblue;
+  background-color: whitesmoke;
   color: black;
   margin: auto;
-  display: block;
+  /* display: block; */
   width: 205px;
 }
 
@@ -19,20 +18,21 @@ tr {
   border: 1px solid black;
   width: 203px;
   margin: auto;
-  display: block;
+  /* display: block; */
 }
 
 td {
-  border: black 1px;
-  color: red;
+  border: 1px solid black;
+  color: blue;
   margin: auto;
-  display: block;
-  text-align: right;
+  padding: 10px;
+  /* display: block; */
+  text-align: center;
 }
 
 
 th {
-  border-right: 1px blueviolet;
-  color: blueviolet;
+  /* border-right: 1px; */
+  color: black;
 }
 
