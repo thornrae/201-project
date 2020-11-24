@@ -1,0 +1,117 @@
+
+h1 {
+    font-size: 7mm;
+    border-radius: 25px;
+    background-color: green;
+    width:400px;
+    text-align: center;
+    border:3px solid red;
+    margin-left: 340px;
+    margin-top: 20px;
+    font-family: cursive; 
+}
+
+body {
+    background-position: center;
+    background-size: px;
+}
+
+a {
+    /* margin: 40px;
+    margin-left: 200px; */
+}
+
+#form {
+    margin-top: 200px;
+}
+header li {
+    float: left;
+    width: 30%;
+
+    /* margin-right: 100px;
+    margin-top: 40px; */
+    display: block;
+    font-family: 'BioRhyme', serif;
+    text-transform: uppercase;
+  }
+  #rules {
+    background-color: white;
+    border: 2px solid black;
+    width: 550px;
+    height: 200px; 
+    margin-left: 270px;
+  }
+  #playername {
+      font-size: 20px;
+      border-radius: 15px;
+      border: 2px solid black;
+      width: 20%;
+      background-color: blue;
+      color: white;
+      margin: auto;
+      margin-left: 300px;
+  }
+  #name {
+    font-size: 20px;
+    border-radius: 15px;
+    border: 2px solid black;
+    width: 28%;
+    background-color: blue;
+    color: white;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    /* margin-left: 240px; */
+
+
+  }
+  #name:hover {
+      background-color: yellow;
+  }
+
+#submit {
+    font-size: 20px;
+      border-radius: 15px;
+      border: 2px solid black;
+      /* width: 43%; */
+      background-color: blue;
+      color: white;
+      margin: auto;
+      margin-top: 5px;
+      /* margin-left: 225px; */
+
+
+}
+#gamestart {
+    font-size: 20px;
+      border-radius: 15px;
+      border: 2px solid black;
+      width: 100px;
+      background-color: blue;
+      color: white;
+      margin-left:485px;
+      margin-top: 5px;
+      
+}
+  /* ul{
+      float: bottom;
+      margin: 20px;
+      list-style-type: none;
+  } */
+
+  ulOne {
+      display: inline-block;
+      font-size: 100px;
+      color:yellow;
+
+  }
+  #footer {
+      position: relative;
+      margin-top: 500px;
+      float: right;
+      margin-right: 500px;
+      margin-top: 300px;
+      display: inline;
+      height: 50px;
+      color:yellow;
+  }
