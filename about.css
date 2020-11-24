@@ -1,6 +1,6 @@
 header {
   height: 100px;
-  background-color: white;
+  background-color: lightskyblue;
   margin-bottom: 25px;
 }
 
@@ -47,13 +47,14 @@ header li {
 
 footer {
   height: 110px;
-  background-color: white;
+  background-color: lightblue;
 }
 
 footer li {
   display: inline;
   float: right;
   margin-right: 25px;
+  margin-top: 10px;
   float: right;
   display: inline;
   font-family: 'BioRhyme', serif;
@@ -92,14 +93,20 @@ div {
 
 img {
   width: 400px;
+  float: left;
+  margin: 10px;
 }
 
 h6 {
   font-size: 20px;
+  font-family: 'BioRhyme', serif;
+  margin-bottom: 10px;
+
 }
 
 div>p {
-  text-align: center;
+  /* text-align: center; */
+  font-family: 'Poppins', sans-serif;
 }
 
 #copyright {
