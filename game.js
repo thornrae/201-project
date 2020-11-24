@@ -98,7 +98,7 @@ function gameOver() {
 
 
 //create a timer function
-var countFrom = 500;
+var countFrom = 60;
 function timer() {
 
   var timeBox = setInterval(function startCountdown() {
