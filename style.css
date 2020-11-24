@@ -1,4 +1,4 @@
-header  {
+/* header  {
 }
 
 
@@ -81,14 +81,15 @@ ul {
 
 }
 
-#footer {
-  float: bottom;
+footer li {
+  float: top;
   margin-right: 25px;
   margin-top: 15px;
   display: inline;
   font-family: 'BioRhyme', serif;
   text-transform: uppercase;
-}
+  float: top;
+} */
 
 
 /* transfer these to the gamepage */

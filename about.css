@@ -1,0 +1,111 @@
+header {
+  height: 100px;
+  background-color: white;
+  margin-bottom: 25px;
+}
+
+header h2{
+float: left;
+}
+
+.survey {
+  color: #FF6700;
+}
+.says {
+  color: #0504AA;
+}
+
+header h2 {
+  font-family: 'BioRhyme', serif;
+  font-size: 50px;
+  border-radius: 75%;
+  background: white;
+  width: 375px;
+  padding: 20px;
+  margin-left: 20px;
+  text-align: center;
+  text-shadow: 2px 2px gray;
+  box-shadow: 6px 6px lightgrey;
+}
+
+
+h1 {
+font-size: 30px;
+text-align: center;
+font-family: 'BioRhyme', serif;
+}
+
+header li {
+  display: inline;
+  margin-right: 25px;
+  float: right;
+  margin-top: 75px;
+  display: inline;
+  font-family: 'BioRhyme', serif;
+  text-transform: uppercase;
+}
+
+footer {
+  height: 110px;
+  background-color: white;
+}
+
+footer li {
+  display: inline;
+  float: right;
+  margin-right: 25px;
+  float: right;
+  display: inline;
+  font-family: 'BioRhyme', serif;
+  text-transform: uppercase;
+}
+
+
+
+footer h2{
+  float: left;
+  font-family: 'BioRhyme', serif;
+  font-size: 25px;
+  border-radius: 75%;
+  background: white;
+  width: 187px;
+  padding: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 2px 2px gray;
+  box-shadow: 6px 6px lightgrey;
+}
+
+
+
+div {
+  border: 2px solid black;
+  height: 200px;
+  width: 400px;
+  margin: auto;
+  background-color: white;
+  overflow: scroll;
+  margin-bottom: 25px;
+  padding: 5px;
+}
+
+img {
+  width: 400px;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+div>p {
+  text-align: center;
+}
+
+#copyright {
+  color: black;
+  margin-top: 90px;
+  float: left;
+  margin-left: -200px;
+
+}
