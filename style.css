@@ -81,14 +81,13 @@ ul {
 
 }
 
-footer li {
-  float: top;
+#footer {
+  float: bottom;
   margin-right: 25px;
   margin-top: 15px;
   display: inline;
   font-family: 'BioRhyme', serif;
   text-transform: uppercase;
-  float: top;
 }
 
 

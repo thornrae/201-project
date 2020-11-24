@@ -3,10 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link href="reset.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+  <link href="homepage.css" rel="stylesheet">
   <title>Survey Says</title>
 </head>
+<style>
+  body {
+    background-image: url("/images/background.jpg");
+    background-repeat: repeat;
+  }
+</style>
 <body>
   <header id="header">
     <h1>Welcome to the Survey Says!</h1>
@@ -20,21 +30,33 @@
 
   </header>
   <main>
-      <button onclick="buttonFunction()">View the Rules</button> 
+      <button id ="mybutton">Game Rules</button> 
+      <p id="Rules"></p>
+
     <br>
     <br />
-    <section id="rules">
+    <section id="container">
+    <form id="rules">
       <!-- <h2>Here's how the survery's played</h2> -->
-      <p>You have X amount of time to come up with the top 5 answers on the board before the timer = 0!</p>
-      <p>...</p>
+      <p>Welcome to Survey Says, a Family Feud style game 
+        you can play on your own, without a family.  
+        Players will have 30 seconds to respond with 
+        the top six survey answers to a survey question.  
+        If you get three wrong answers or run out of time 
+        before responding with the top six survey answers, 
+        the game is over.  We don't have Steve Harvey, 
+        but we do think you will enjoy this game.  Have fun!</p>
+      
       <p>Get the rules for the Feud</p>
+    </form>
     </section>
+
     <section id="player-name-section">
       <form id="playernameform">
         <fieldset>
-          <label for="playername">Player:</label>
+          <label id="playername">Player:</label>
           <input id="name" type="text" placeholder="Enter your name here" required />
-          <button type="submit">Submit</button>
+          <button id="submit">Submit</button>
         </fieldset>
       </form>
     </section>
@@ -49,13 +71,19 @@
   </main>
   <footer id="footer">
     <h3>Survey Says</h3>
-    <ul id="ulOne">
+    <!-- <ul id="ulOne"> -->
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="results.html">Results</a></li>
-    </ul>
+    <!-- </ul> -->
     &copy; Powered by Survey Says 2020
   </footer>
   <script src="welcome.js"></script>
+  <script>
+    document.getElementById("mybutton").addEventListener("click", function() {
+      document.getElementById("Rules").innerHTML = "The rules are rules and you are going to follow them you like it or not!";
+    });
+    </script>
+    
 </body>
 </html>
