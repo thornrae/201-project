@@ -23,6 +23,8 @@ header {
 .says {
   color: #0504AA;
 }
+
+
 header h2 {
   font-family: 'BioRhyme', serif;
   font-size: 50px;
@@ -104,6 +106,12 @@ margin: auto;
   /* margin-top: 250px; */
   
 }
+
+#stylequestion{
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
 #survey-question {
   width: 500px;
   height: 75px;
@@ -116,6 +124,8 @@ margin: auto;
   padding: 10px;
   display: none;
 }
+
+
 #results{
   display: none;
   margin: auto;
@@ -144,7 +154,8 @@ margin: auto;
 #answer-submit {
   width: 700px;
   margin: auto;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  margin-top: 10px;
   text-align: center;
   display: none;
 }
@@ -182,6 +193,8 @@ footer p {
   color: white;
   margin-top: 20px;
 }
+
+
 
 
 

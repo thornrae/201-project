@@ -17,8 +17,6 @@
 <body>
   <header id="header">
     <h2><span class="survey">Survey</span> <span class="says">Says</span></h2>
-
-    <!-- id to be changed to class since used more than once? or update id names to be unique  -->
     <ul class="ulOne">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -26,7 +24,6 @@
     </ul>
   </header>
 
-  <!-- <h1>Game Page</h1> -->
 
   <main>
   <div id="game-info">
@@ -51,8 +48,21 @@
     <button id="play-now-button">Play Now</button>
   </section>
 
+
   <section id="survey-question">
-    <h4 id="question-box">Survey Question:</h4>
+    <h4 id="stylequestion">Submit The Top 6 Answers to the Survey Question:</h4>
+
+    <h4 id="question-box"></h4>
+  </section>
+
+  <section id="answer-submit">
+    <form id="answerform">
+      <fieldset>
+      <label for="answerForm">Enter your answer here: </label>
+        <input id="answerinput" type="text" name="answerForm">
+        <button id="submitanswer">Click to Check Your Answer</button>
+      </fieldset>
+      </form>
   </section>
 
   <section id="survey-answers">
@@ -82,15 +92,7 @@
       </div>
   </section>
 
-  <section id="answer-submit">
-    <form id="answerform">
-      <fieldset>
-      <label for="answerForm">Enter your answer here: </label>
-        <input id="answerinput" type="text" name="answerForm">
-        <button id="submitanswer">Click to Check Your Answer</button>
-      </fieldset>
-      </form>
-  </section>
+  
 </main>
 
   <script src="game.js"></script>
