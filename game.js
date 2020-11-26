@@ -169,7 +169,7 @@ function checkAnswer(event) {
   for (var i = 0; i < surveyQuestionAndAnswerArray.length; i++) {
     if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer1) {
       var topAnswerData = document.createElement('h4');
-      topAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer1;
+      topAnswerData.textContent = '#1. ' + surveyQuestionAndAnswerArray[i].surveyAnswer1;
       surveyAnswerOne.appendChild(topAnswerData);
 
       answeredCorrectly = true;
@@ -179,7 +179,7 @@ function checkAnswer(event) {
       // console.log('top answer ' + playerScore);
     } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer2) {
       var secondAnswerData = document.createElement('h4');
-      secondAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer2;
+      secondAnswerData.textContent = '#2. ' + surveyQuestionAndAnswerArray[i].surveyAnswer2;
       surveyAnswerTwo.appendChild(secondAnswerData);
 
       answeredCorrectly = true;
@@ -190,7 +190,7 @@ function checkAnswer(event) {
 
     } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer3) {
       var thirdAnswerData = document.createElement('h4');
-      thirdAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer3;
+      thirdAnswerData.textContent = '#3. ' + surveyQuestionAndAnswerArray[i].surveyAnswer3;
       surveyAnswerThree.appendChild(thirdAnswerData);
 
       answeredCorrectly = true;
@@ -200,7 +200,7 @@ function checkAnswer(event) {
  
     } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer4) {
       var fourthAnswerData = document.createElement('h4');
-      fourthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer4;
+      fourthAnswerData.textContent = '#4. ' + surveyQuestionAndAnswerArray[i].surveyAnswer4;
       surveyAnswerFour.appendChild(fourthAnswerData);
 
       answeredCorrectly = true;
@@ -209,7 +209,7 @@ function checkAnswer(event) {
       answerCorrect ++;
     } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer5) {
       var fifthAnswerData = document.createElement('h4');
-      fifthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer5;
+      fifthAnswerData.textContent = '#5. ' + surveyQuestionAndAnswerArray[i].surveyAnswer5;
       surveyAnswerFive.appendChild(fifthAnswerData);
 
       answeredCorrectly = true;
@@ -218,7 +218,7 @@ function checkAnswer(event) {
 
     } else if (playerAnswer === surveyQuestionAndAnswerArray[i].surveyAnswer6) {
       var sixthAnswerData = document.createElement('h4');
-      sixthAnswerData.textContent = surveyQuestionAndAnswerArray[i].surveyAnswer6;
+      sixthAnswerData.textContent = '#6. ' + surveyQuestionAndAnswerArray[i].surveyAnswer6;
       surveyAnswerSix.appendChild(sixthAnswerData);
 
       answeredCorrectly = true;
