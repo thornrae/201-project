@@ -1,0 +1,229 @@
+header {
+  height: 100px;
+  background-color: lightskyblue;
+  margin-bottom: 25px;
+}
+  
+header h2{
+  float: left;
+}
+  
+.survey {
+    color: #FF6700;
+}
+.says {
+    color: #0504AA;
+}
+  
+header h2 {
+    font-family: 'BioRhyme', serif;
+    font-size: 50px;
+    border-radius: 75%;
+    background: white;
+    width: 375px;
+    padding: 20px;
+    margin-left: 20px;
+    text-align: center;
+    text-shadow: 2px 2px gray;
+    box-shadow: 6px 6px lightgrey;
+}
+
+header li {
+    display: inline;
+    margin-right: 25px;
+    float: right;
+    margin-top: 75px;
+    display: inline;
+    font-family: 'BioRhyme', serif;
+    text-transform: uppercase;
+}
+
+footer {
+    height: 110px;
+    background-color: lightblue;
+    margin-top: 335px;
+}
+  
+footer li {
+    display: inline;
+    float: right;
+    margin-right: 25px;
+    margin-top: 10px;
+    float: right;
+    display: inline;
+    font-family: 'BioRhyme', serif;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: 'BioRhyme', serif;
+    font-size: 40px;
+
+}
+
+footer h2{
+  float: left;
+  font-family: 'BioRhyme', serif;
+  font-size: 25px;
+  border-radius: 75%;
+  background: white;
+  width: 187px;
+  padding: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 2px 2px gray;
+  box-shadow: 6px 6px lightgrey;
+}
+
+main {
+    width: 600px;
+    background-color: white;
+    margin: auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+#form {
+    margin-top: 200px;
+}
+
+#rules {
+    background-color:none;
+    border: 2px solid black;
+    width: 550px;
+    height: 200px; 
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+  }
+  #playername {
+      font-size: 20px;
+      border-radius: 15px;
+      border: 2px solid black;
+      width: 40%;
+      background-color: blue;
+      color: white;
+      margin: auto;
+      margin-left: 75px;
+      padding: 5px;
+  }
+  #name {
+    font-size: 20px;
+    border-radius: 15px;
+    border: 2px solid black;
+    width: 28%;
+    background-color: blue;
+    color: white;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    /* margin-left: 240px; */
+    padding: 5px;
+
+
+
+  }
+  #name:hover {
+      background-color: yellow;
+  }
+
+#submit {
+    font-size: 20px;
+      border-radius: 15px;
+      border: 2px solid black;
+      /* width: 43%; */
+      background-color: blue;
+      color: white;
+      margin: auto;
+      margin-top: 5px;
+      /* margin-left: 225px; */
+      padding: 5px;
+
+
+
+}
+#gamestart {
+    font-size: 20px;
+      border-radius: 15px;
+      border: 2px solid black;
+      width: 100px;
+      background-color: blue;
+      color: white;
+      margin-left:485px;
+      margin-top: 5px;
+      padding: 5px;
+
+}
+      #copyright {
+        color: black;
+        margin-top: 90px;
+        float: left;
+        margin-left: -200px;
+      }
+
+
+
+
+/* h1 {
+    font-size: 7mm;
+    border-radius: 25px;
+    background-color: green;
+    width:400px;
+    text-align: center;
+    border:3px solid red;
+    margin-left: 340px;
+    margin-top: 20px;
+    font-family: cursive; 
+}
+
+body {
+    background-position: center;
+    background-size: px;
+} */
+
+/* a {
+    /* margin: 40px;
+    margin-left: 200px; */
+/* } */ 
+
+
+
+/* header li {
+    float: left;
+    width: 30%;
+
+    /* margin-right: 100px;
+    margin-top: 40px; */
+    /* display: block;
+    font-family: 'BioRhyme', serif;
+    text-transform: uppercase;
+  } */ 
+
+  
+
+      
+}
+  /* ul{
+      float: bottom;
+      margin: 20px;
+      list-style-type: none;
+  } */
+
+  /* ulOne {
+      display: inline-block;
+      font-size: 100px;
+      color:yellow;
+
+  }
+  #footer {
+      position: relative;
+      margin-top: 500px;
+      float: right;
+      margin-right: 500px;
+      margin-top: 300px;
+      display: inline;
+      height: 50px;
+      color:yellow;
+  } */
