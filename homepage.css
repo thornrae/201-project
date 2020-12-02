@@ -126,7 +126,7 @@ main {
 
   }
   #name:hover {
-      background-color: yellow;
+      background-color: rgb(46, 46, 42);
   }
 
 #submit {
@@ -146,13 +146,13 @@ main {
 }
 #gamestart {
     font-size: 20px;
-      border-radius: 15px;
+      border-radius: 10px;
       border: 2px solid black;
       width: 100px;
       background-color: blue;
       color: white;
       margin-left:485px;
-      margin-top: 5px;
+      margin-top: -35px;
       padding: 5px;
 
 }
